@@ -28,11 +28,6 @@
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
 
-   <p>Date: "{{ now }}"</p>
-    <p>Date from Method: "{{ reverseMessageInMethod() }}"</p>
-    <p>Date from Computed: "{{ reversedMessageInComputed }}"</p> <br />
-    <button type="button" v-on:click="changeDate()">Click to update date</button>
-
   </div>
 </template>
 
@@ -43,28 +38,10 @@ export default {
   props: {
     msg: String
   },
-  data(){
-    return {
-      now: Date.now()
-    }
-   
-  },
-  methods: {
-    changeDate: function () {
-      this.now = Date.now()
-    },
-    reverseMessageInMethod: function () {
-      return Date.now()
-    }    
-  },
   computed: {
     ...mapGetters([
       'getCounter'
-    ]), 
-    reversedMessageInComputed: function () {
-      // `this` points to the vm instance
-      return Date.now()
-    }     
+    ])    
   },
 }
 </script>
